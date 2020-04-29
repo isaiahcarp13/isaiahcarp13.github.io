@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Isaiah Carpenter"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/bio.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Aspiring Data Analyst. UIUC class of 2020"
   location         : "Chicago, IL"
   email            : "isaiahcarp13@gmail.com"
