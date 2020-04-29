@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Isaiah Carpenter"
-  avatar           : "/images/bio.JPG" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "isaiahcarp13.github.io/images/bio.JPG" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Aspiring Data Analyst. UIUC class of 2020"
   location         : "Chicago, IL"
   email            : "isaiahcarp13@gmail.com"
@@ -103,7 +103,7 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       # url: mailto:your.name@email.com
     - label: "Linkedin"
-      icon: "fab fa-linkedin-in"
+      icon: "fab fa-fw fa-linkedin-in"
       url: "https://www.linkedin.com/in/IsaiahNCarpenter"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
