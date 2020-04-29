@@ -100,7 +100,7 @@ author:
   email            : "isaiahcarp13@gmail.com"
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
+      icon: "fas fa-fw fa-envelope"
       # url: mailto:your.name@email.com
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
