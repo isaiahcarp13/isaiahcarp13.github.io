@@ -1,8 +1,9 @@
 ---
 title: "About me"
 permalink: /about/
+author_profile: true
 header:
-  image: "isaiahcarp13.github.io/images/chi-town.jpg"
+  image: "/images/chi-town.jpg"
 
 ---
 
