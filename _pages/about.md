@@ -2,7 +2,7 @@
 title: "About me"
 permalink: /about/
 header:
-  image: "isaiahcarp13.github.io/images/tettegouche.jpg"
+  image: "isaiahcarp13.github.io/images/chi-town.jpg"
 
 ---
 
