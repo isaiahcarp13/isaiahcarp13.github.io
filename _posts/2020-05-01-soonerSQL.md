@@ -32,166 +32,93 @@ This code creates the table and defines each column with its corresponding value
 
 ## Games
 
-In this table, I created another primary_key which is for the **game_id** column. This column will hold a unique decimal number for each individual game played, which starts at 1.01 and ends at 10.14 . The first part of decimal indicates the season, most recent first, while the second part indicates the game in that season in sequential order. The other variables are shown below:
+In this table, I created another primary_key which is for the **game_id** column. This column will hold a unique decimal number for each individual game played, which starts at 1.01 and ends at 10.14 . The table also contains team passing, rushing, and other scrimage play stats. Here is the code for creating the Games table:
 
-<table>
-<colgroup>
-<col width="30%"/>
-<col width="70%"/>
-<col width="30%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Columns</th>
-<th>Description</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
+~~~~mysql
+CREATE TABLE Games(
+	game_id decimal(4,2) PRIMARY KEY,
+	year year,
+	game_site Varchar(10),
+	opp_rank INT,
+	opp Varchar(40),
+	opp_conf Varchar(20),
+	result Varchar(6),
+	pts_scored INT,
+	pass_cmp INT,
+	pass_att INT,
+	pass_pct decimal(4,2),
+	pass_yds INT,
+	pass_td INT,
+	rush_att INT,
+	rush_yds INT,
+	rush_avg decimal(4,2),
+	rush_td INT,
+	tot_plays INT,
+	tot_yds INT,
+	avg_play decimal(4,2),
+	1st_downs INT,
+	tot_fum INT,
+	tot_int INT,
+	tot_turn INT);
+~~~~
 
-<tr>
-<td markdown="span">**game_id**</td>
-<td markdown="span"> Decimal value that indicates each specific game by season then week.</td>
-<td markdown="span">*decimal*</td>
-</tr>
+## Yards
 
-<tr>
-<td markdown="span">**year**</td>
-<td markdown="span">The year in which the season of the game started in.</td>
-<td markdown="span">*year*</td>
-</tr>
+This table is where each individual's game stats are stored. **game_id** and **player_id** are both foreign_keys that reference the primary_key in the Game and Player Tables. The combination of these two columns creates the primary_key for this table. The following code is what I used to create the table:
 
-<tr>
-<td markdown="span">**game_site**</td>
-<td markdown="span">If the location was either home, away, or at a neutral location.</td>
-<td markdown="span">*Varchar*</td>
-</tr>
+~~~~mysql
+Create table Yards(
+game_id decimal(4,2),
+player_id int,
+rush_att INT,
+rush_yds INT,
+rush_td INT,
+rec INT,
+rec_yds INT,
+rec_td INT,
+scrm_plays INT,
+scrm_yds INT,
+scrm_td INT,
+pass_cmp INT,
+pass_att INT,
+pass_pct INT,
+pass_yds INT,
+pass_td INT,
+pass_int INT,
+pass_eff decimal(5,2),
+PRIMARY KEY(game_id, player_id),
+FOREIGN KEY(game_id) REFERENCES Games(game_id) ON DELETE Cascade,
+FOREIGN KEY(player_id) REFERENCES Player(player_id) ON DELETE Cascade
+);
+~~~~
 
-<tr>
-<td markdown="span">**opp_rank**</td>
-<td markdown="span">Opponent's rank in the AP top 25 poll that week.</td>
-<td markdown="span">*INT*</td>
-</tr>
+## Sample outputs
 
-<tr>
-<td markdown="span">**opp**</td>
-<td markdown="span">The name of the opposing team that week.</td>
-<td markdown="span">*Varchar*</td>
-</tr>
+### Player Table
+~~~~mysql
+Select * From Players
+limit 10;
+~~~~
 
-<tr>
-<td markdown="span">**opp_conf**</td>
-<td markdown="span">The athletic conference that the Opponent is a member of at the time of the game.</td>
-<td markdown="span">*Varchar*</td>
-</tr>
+Will out put this:
 
-<tr>
-<td markdown="span">**result**</td>
-<td markdown="span">The result of the game expressed either W for wins or L for losses.</td>
-<td markdown="span">*Varchar*</td>
-</tr>
+![alt]({{ site.url }}{{ site.baseurl }}/images/sooner/player sample.png
 
-<tr>
-<td markdown="span">**pts_scored**</td>
-<td markdown="span">Total points scored by Oklahoma in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
 
-<tr>
-<td markdown="span">**pass_cmp**</td>
-<td markdown="span">Total passes completed by the team in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
+## Basic Stat Table
 
-<tr>
-<td markdown="span">**pass_att**</td>
-<td markdown="span">Total passes attempted by the team in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
+I am able to calculate player stats by joining each of the tables together by their primary_key's
 
-<tr>
-<td markdown="span">**pass_pct**</td>
-<td markdown="span">Total pass completion rate by the team in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
+~~~~mysql
+select p.pos,p.name, sum(y.rush_yds), sum(y.rec_yds), sum(y.pass_yds), sum(y.scrm_yds)
+from Player p
+join Yards y
+on p.player_id = Y.player_id
+group by p.player_id
+order by sum(y.scrm_yds) desc
+limit 10;
+~~~~
 
-<tr>
-<td markdown="span">**pass_yds**</td>
-<td markdown="span">Total passing yards by the team in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
+Will output a table showing the top 10 Sooners in order of scrimage yards along with their rushing, receiving yards.
 
-<tr>
-<td markdown="span">**pass_td**</td>
-<td markdown="span">Total passing touchdowns by the team in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-<tr>
-<td markdown="span">**rush_att**</td>
-<td markdown="span">Total rush attempts by the team in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-<tr>
-<td markdown="span">**rush_yds**</td>
-<td markdown="span">Total rushing yards by the team in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-<tr>
-<td markdown="span">**rush_avg**</td>
-<td markdown="span">Average rushing yards per play in each game.</td>
-<td markdown="span">*decimal*</td>
-</tr>
-
-<tr>
-<td markdown="span">**rush_td**</td>
-<td markdown="span">Total rushing touchdowns by the team in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-<tr>
-<td markdown="span">**tot_plays**</td>
-<td markdown="span">Total plays from scrimage by the offense in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-<tr>
-<td markdown="span">**tot_yds**</td>
-<td markdown="span">Total yards from scrimage by the offense in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-<tr>
-<td markdown="span">**avg_play**</td>
-<td markdown="span">The Average yards for a play from scrimage by the offense in each game.</td>
-<td markdown="span">*decimal*</td>
-</tr>
-
-<tr>
-<td markdown="span">**1st_downs**</td>
-<td markdown="span">Total 1st downs for the offense in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-<tr>
-<td markdown="span">**tot_fum**</td>
-<td markdown="span">Total fumbles lost by the offense in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-<tr>
-<td markdown="span">**tot_int**</td>
-<td markdown="span">Total interceptions thrown by the offense in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-<tr>
-<td markdown="span">**tot_turn**</td>
-<td markdown="span">Total fumbles, interceptions or unsuccessful 4th down attempts, by the offense in each game.</td>
-<td markdown="span">*INT*</td>
-</tr>
-
-</tbody>
-</table>
+![alt]({{ site.url }}{{ site.baseurl }}/images/sooner/join table sample.png
