@@ -7,6 +7,8 @@ header:
   image: "/images/sooner header.jpg"
 excerpt: "Sooner SQL Database"
 layout: single
+toc: true
+toc_label: "Directory"
 ---
 
 Since birth, I have been watching the Oklahoma Sooners football team play on Saturdays against many other college football teams. The one aspect that I enjoyed the most about Oklahoma football is their mastery of the offense side. This data base logs every Sooner to either run, catch, or throw a the ball from scrimage in the last ten college football seasons.
