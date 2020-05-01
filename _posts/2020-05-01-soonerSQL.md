@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Sooner Database"
 date: 2020-05-01
 author_profile: true
