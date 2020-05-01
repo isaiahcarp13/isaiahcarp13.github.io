@@ -1,10 +1,13 @@
 ---
+layout: pages
 permalink: /about/
 title: "About me"
 author_profile: true
 header:
   image: "/images/chi-town.jpg"
 ---
+<!doctype html>
+
 <html>
   <head>
   hello world
@@ -15,4 +18,5 @@ header:
 
   Aside from learning about the economy and big data, I have passions for exercise, sports, music, and enjoying time with friends. I am Midwest born and raised so it is only natural that I favor a good beer during my pastimes.
 </body>
+
 </html>
