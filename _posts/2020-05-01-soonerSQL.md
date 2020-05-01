@@ -11,6 +11,8 @@ excerpt: "Sooner SQL Database"
 
 Howdy Yall!
 
+![alt]({{ site.url }}{{ site.baseurl }}/images/sooners.jpg)
+
 ~~~~mysql
 select * from Yards;
 ~~~~
