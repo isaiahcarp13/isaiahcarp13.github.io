@@ -34,8 +34,8 @@ In this table, I created another primary_key which is for the **game_id** column
 
 <table>
 <colgroup>
-<col width="30%" />
-<col width="70%" />
+<col width="30%"/>
+<col width="70%"/>
 <col width="30%"/>
 </colgroup>
 <thead>
@@ -50,7 +50,7 @@ In this table, I created another primary_key which is for the **game_id** column
 <tr>
 <td markdown="span">**game_id**</td>
 <td markdown="span"> Decimal value that indicates each specific game by season then week.</td>
-<td>*decimal*</td>
+<td markdown="span">*decimal*</td>
 </tr>
 
 <tr>
@@ -63,6 +63,132 @@ In this table, I created another primary_key which is for the **game_id** column
 <td markdown="span">**game_site**</td>
 <td markdown="span">If the location was either home, away, or at a neutral location.</td>
 <td markdown="span">*Varchar*</td>
+</tr>
+
+<tr>
+<td markdown="span">**opp_rank**</td>
+<td markdown="span">Opponent's rank in the AP top 25 poll that week.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**opp**</td>
+<td markdown="span">The name of the opposing team that week.</td>
+<td markdown="span">*Varchar*</td>
+</tr>
+
+<tr>
+<td markdown="span">**opp_conf**</td>
+<td markdown="span">The athletic conference that the Opponent is a member of at the time of the game.</td>
+<td markdown="span">*Varchar*</td>
+</tr>
+
+<tr>
+<td markdown="span">**result**</td>
+<td markdown="span">The result of the game expressed either W for wins or L for losses.</td>
+<td markdown="span">*Varchar*</td>
+</tr>
+
+<tr>
+<td markdown="span">**pts_scored**</td>
+<td markdown="span">Total points scored by Oklahoma in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**pass_cmp**</td>
+<td markdown="span">Total passes completed by the team in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**pass_att**</td>
+<td markdown="span">Total passes attempted by the team in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**pass_pct**</td>
+<td markdown="span">Total pass completion rate by the team in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**pass_yds**</td>
+<td markdown="span">Total passing yards by the team in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**pass_td**</td>
+<td markdown="span">Total passing touchdowns by the team in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**rush_att**</td>
+<td markdown="span">Total rush attempts by the team in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**rush_yds**</td>
+<td markdown="span">Total rushing yards by the team in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**rush_avg**</td>
+<td markdown="span">Average rushing yards per play in each game.</td>
+<td markdown="span">*decimal*</td>
+</tr>
+
+<tr>
+<td markdown="span">**rush_td**</td>
+<td markdown="span">Total rushing touchdowns by the team in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**tot_plays**</td>
+<td markdown="span">Total plays from scrimage by the offense in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**tot_yds**</td>
+<td markdown="span">Total yards from scrimage by the offense in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**avg_play**</td>
+<td markdown="span">The Average yards for a play from scrimage by the offense in each game.</td>
+<td markdown="span">*decimal*</td>
+</tr>
+
+<tr>
+<td markdown="span">**1st_downs**</td>
+<td markdown="span">Total 1st downs for the offense in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**tot_fum**</td>
+<td markdown="span">Total fumbles lost by the offense in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**tot_int**</td>
+<td markdown="span">Total interceptions thrown by the offense in each game.</td>
+<td markdown="span">*INT*</td>
+</tr>
+
+<tr>
+<td markdown="span">**tot_turn**</td>
+<td markdown="span">Total fumbles, interceptions or unsuccessful 4th down attempts, by the offense in each game.</td>
+<td markdown="span">*INT*</td>
 </tr>
 
 </tbody>
