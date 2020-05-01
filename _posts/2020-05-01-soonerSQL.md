@@ -25,4 +25,45 @@ CREATE TABLE Player (
  );
 ~~~~
 
-This code creates the table and defines each column with its corresponding value type. The **player_id** column is also identified as a primary_key with a unique integer.  
+This code creates the table and defines each column with its corresponding value type. The **player_id** column is also identified as a primary_key with a unique integer.
+
+
+## Games
+
+In this table, I created another primary_key which is for the **game_id** column. This column will hold a unique decimal number for each individual game played, which starts at 1.01 and ends at 10.14 . The first part of decimal indicates the season, most recent first, while the second part indicates the game in that season in sequential order. The other variables are shown below:
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+<col width="30%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Columns</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td markdown="span">**game_id**</td>
+<td markdown="span"> Decimal value that indicates each specific game by season then week.</td>
+<td>*decimal*</td>
+</tr>
+
+<tr>
+<td markdown="span">**year**</td>
+<td markdown="span">The year in which the season of the game started in.</td>
+<td markdown="span">*year*</td>
+</tr>
+
+<tr>
+<td markdown="span">**game_site**</td>
+<td markdown="span">If the location was either home, away, or at a neutral location.</td>
+<td markdown="span">*Varchar*</td>
+</tr>
+
+</tbody>
+</table>
