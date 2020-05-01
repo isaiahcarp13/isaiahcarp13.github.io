@@ -102,7 +102,7 @@ limit 10;
 
 Will out put this:
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/sooner/player sample.png
+<img src="{{ site.url }}{{ site.baseurl }}/images/sooner/player sample.png" alt="player"/>
 
 
 ## Basic Stat Table
@@ -121,4 +121,5 @@ limit 10;
 
 Will output a table showing the top 10 Sooners in order of scrimage yards along with their rushing, receiving yards.
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/sooner/join table sample.png
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/sooner/join table sample.png" alt="join"/>
