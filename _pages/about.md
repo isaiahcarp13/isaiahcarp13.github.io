@@ -17,3 +17,5 @@ header:
 I also love travel as it has let me see new places and gain new perspectives on life.
 
 ![alt]({{ site.url }}{{ site.baseurl }}/images/london.heic)
+
+![alt]({{ site.url }}{{ site.baseurl }}/images/tettegouche.jpg)
