@@ -16,7 +16,9 @@ Since birth, I have been watching the Oklahoma Sooners football team play on Sat
 
 The database was created using MySQL and a SQL text editor called PopSQL. The data was pulled from [CollegeFootballReference](https://www.sports-reference.com/cfb/schools/oklahoma/) and I edited the columns within Excel to create .csv files. I used this data to create three main tables within the database, Player, Games, Yards.
 
-## Player
+## Tables
+
+### Player
 
 This is the table that holds each Player's **Name** and **Position** as well as a unique **player_id** that will serve as the primary_key for each player.
 
@@ -31,7 +33,7 @@ CREATE TABLE Player (
 This code creates the table and defines each column with its corresponding value type. The **player_id** column is also identified as a primary_key with a unique integer.
 
 
-## Games
+### Games
 
 In this table, I created another primary_key which is for the **game_id** column. This column will hold a unique decimal number for each individual game played, which starts at 1.01 and ends at 10.14 . The table also contains team passing, rushing, and other scrimage play stats. Here is the code for creating the Games table:
 
@@ -63,7 +65,7 @@ CREATE TABLE Games(
 	tot_turn INT);
 ~~~~
 
-## Yards
+### Yards
 
 This table is where each individual's game stats are stored. **game_id** and **player_id** are both foreign_keys that reference the primary_key in the Game and Player Tables. The combination of these two columns creates the primary_key for this table. The following code is what I used to create the table:
 
@@ -106,7 +108,7 @@ Will out put this:
 <img src="{{ site.url }}{{ site.baseurl }}/images/sooner/player sample.png" alt="player"/>
 
 
-## Basic Stat Table
+### Basic Stat Table
 
 I am able to calculate player stats by joining each of the tables together by their primary_key's
 
