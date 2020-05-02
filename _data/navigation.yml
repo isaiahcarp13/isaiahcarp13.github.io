@@ -2,7 +2,7 @@
 main:
   - title: "About me"
     url: https://isaiahcarp13.github.io/about/
-  -title: "Resume"
+  - title: "Resume"
     url: https://isaiahcarp13.github.io/assets/Resume.pdf
   - title: "My Projects"
     url: https://isaiahcarp13.github.io/projects/
