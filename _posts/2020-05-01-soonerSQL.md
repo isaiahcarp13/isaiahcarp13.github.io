@@ -9,6 +9,7 @@ excerpt: "Sooner SQL Database"
 layout: single
 toc: true
 toc_label: "Directory"
+toc_icon: "football-ball"
 toc_sticky: true
 ---
 
