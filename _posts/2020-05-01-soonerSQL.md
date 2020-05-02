@@ -129,3 +129,25 @@ Will output a table showing the top 10 Sooners in order of scrimage yards along 
 
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/sooner/join table sample.png" alt="join"/>
+
+### Analysis of Offensive performance against ranked opponents
+~~~~mysql
+select year,
+case
+    when opp_rank is Null then 'Not Ranked'
+    else 'Ranked'
+end as ranked,
+ifnull(SUM(case when result like 'W' then 1 end),0) as Wins,
+ifnull(SUM(case when result like 'L' then 1 end),0) as Losses,
+round(SUM(case when result like 'W' then 1 end)/count(game_site) * 100,2) as 'Win %',
+round(avg(pts_scored),2) as 'Avg points',
+round(avg(pass_td + rush_td),2) as 'Avg TDs',
+round(avg(tot_yds),2) as 'Avg Yards'
+from Games
+group by ranked,year;
+~~~~
+Will produce:
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/sooner/ranked.png" alt="ranked"/>
+
+As we can see by the table above, Offensive performance does decrease. This is expected as ranked teams usually have better defenses than teams who are not in the AP top 25.
