@@ -23,6 +23,8 @@ The database was created using MySQL and a SQL text editor called PopSQL. The da
 
 This is the table that holds each Player's **Name** and **Position** as well as a unique **player_id** that will serve as the primary_key for each player.
 
+[Download Zip file](https://isaiahcarp13.github.io/download/Sooners.zip)
+
 ~~~~mysql
 CREATE TABLE Player (
     player_id INT PRIMARY KEY,
