@@ -151,3 +151,29 @@ Will produce:
 <img src="{{ site.url }}{{ site.baseurl }}/images/sooner/ranked.png" alt="ranked"/>
 
 As we can see by the table above, Offensive performance does decrease. This is expected as ranked teams usually have better defenses than teams who are not in the AP top 25.
+
+### Stat Leaders by Year
+
+Here is some code that creates a query for the rushing leader for each year. If one wanted to see other top athletes in other stats all you have to do is replace 'rush_yds' with another stat in the Yards Table.
+
+~~~~MySQL
+with stat_leader as (
+
+    select g.year,p.name,p.pos, sum(y.rush_yds) as 'total rush yards',
+    Rank() Over (
+        partition by g.year
+        order by sum(y.rush_yds) desc
+    ) stat_rank
+
+    from yards y
+    join player p
+    on p.player_id = y.player_id
+    join games g
+    on g.game_id = y.game_id
+    group by g.year,p.name,p.pos
+)
+select * from stat_leader
+where stat_rank <=1;
+~~~~
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/sooner/stat leader.png" alt="join"/>
