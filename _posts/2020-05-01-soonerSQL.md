@@ -154,7 +154,7 @@ As we can see by the table above, Offensive performance does decrease. This is e
 
 ### Stat Leaders by Year
 
-Here is some code that creates a query for the rushing leader for each year. If one wanted to see other top athletes in other stats all you have to do is replace 'rush_yds' with another stat in the Yards Table.
+Here is some code that creates a query for the rushing leader for each year. If one wanted to see other top athletes in other stats all you have to do is replace **rush_yds** with another stat in the Yards Table.
 
 ~~~~MySQL
 with stat_leader as (
@@ -177,3 +177,7 @@ where stat_rank <=1;
 ~~~~
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/sooner/stat leader.png" alt="join"/>
+
+## Summary
+
+Overall I enjoyed creating this database and throughout the process I learned a lot about the teams history and reminisced on how the team made adjustments during each season to tailor to the strengths of the play makers. This project also taught me how to search for data and led to me creating a unique data set. I may update this set in the future however I am looking forward to more database projects to further my skills in the field. 
