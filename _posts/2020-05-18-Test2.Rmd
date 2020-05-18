@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Test 2 RMD"
 date: 2020-05-17
 author_profile: true
